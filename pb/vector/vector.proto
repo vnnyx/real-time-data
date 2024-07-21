@@ -1,0 +1,15 @@
+syntax = "proto3";
+option go_package = "github.com/vnnyx/real-time-data/pb/vector";
+
+package pb.vector;
+
+import "google/protobuf/wrappers.proto";
+
+service Vector {
+    rpc StoreToVectorDB(DataVectorRequest) returns (google.protobuf.BoolValue) {}
+}
+
+message DataVectorRequest {
+    string data = 1;
+    string type = 2;
+}
